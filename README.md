@@ -276,10 +276,8 @@ else
 }
 
 
-
-//Swith Case dia 06 05 2026
-
-
+06/06/2026
+//Swith Case e IF atividade de 1 a 10
 
 
 //Variáveis
@@ -544,4 +542,503 @@ class Program
 */
 
 
+//Exercício do dia 06/05/2026
+
+//Exercício 1 
+//Variáveis
+
+/*
+ * Crie um programa que peça ao usuário para digitar um número de 1 a 5. O programa deve usar um switch
+para imprimir o número por extenso (ex: "Um", "Dois", etc.). Se o usuário digitar um número fora deste
+intervalo, o default deve exibir "Número fora do limite".
+*/
+/*
+int numero;
+
+//Entrada
+
+Console.WriteLine("Digite um número de 1 a 5:");
+numero = Convert.ToInt32(Console.ReadLine());
+
+
+//Processamento
+
+if (numero == 0)
+{
+    Console.WriteLine("Número fora do limite,sabe ler não?");
+}
+else
+{
+    switch (numero)
+    {
+        case 1:
+            Console.WriteLine("Um");
+            break;
+        case 2:
+            Console.WriteLine("Dois");
+            break;
+        case 3:
+            Console.WriteLine("Três");
+            break;
+        case 4:
+            Console.WriteLine("Quatro");
+            break;
+        case 5:
+            Console.WriteLine("Cinco");
+            break;
+        default:
+            Console.WriteLine("Número fora do limite,sabe ler não?");
+            break;
+    }
+}
+
+*/
+
+//Exercício 2
+/*
+ * Um restaurante deseja avaliar o atendimento. Peça ao cliente para digitar uma nota de 1 a 5, onde:
+● 1: "Péssimo"
+● 2: "Ruim"
+● 3: "Razoável"
+● 4: "Bom"
+● 5: "Excelente"
+Imprima a classificação correspondente. Adicione um default para notas inválidas.
+*/
+/*
+//Variáveis
+int numero;
+
+Console.WriteLine("Informe uma nota de 1 a 5 para nos ajudar a avaliar o nosso atendimento:");
+numero = Convert.ToInt32(Console.ReadLine());
+
+
+//Processamento
+
+if (numero == 0)
+{
+    Console.WriteLine("Número fora do limite,sabe ler não ou ta se fazendo de sonso(a)?");
+}
+else
+{
+    switch (numero)
+    {
+        case 1:
+            Console.WriteLine("Nosso atendimento foi avaliado como: Pésimo!");
+            break;
+        case 2:
+            Console.WriteLine("Nosso atendimento foi avaliado como: Ruim!");
+            break;
+        case 3:
+            Console.WriteLine("Nosso atendimento foi avaliado como: Razoável!");
+            break;
+        case 4:
+            Console.WriteLine("Nosso atendimento foi avaliado como: Bom!");
+            break;
+        case 5:
+            Console.WriteLine("Nosso atendimento foi avaliado como: Excelente!");
+            break;
+        default:
+            Console.WriteLine("Número fora do limite,sabe ler não,resto de aborto?");
+            break;
+    }
+}
+
+*/
+
+//Exercício 3
+/*Simule a tela de seleção de classe de um jogo de RPG. Peça ao usuário para escolher uma classe digitando:
+● "G" para Guerreiro
+● "M" para Mago
+● "A" para Arqueiro
+Use o switch (verificando uma variável do tipo char ou string) para imprimir uma mensagem de
+boas-vindas adequada para a classe escolhida, informando o item inicial daquele personagem (ex:
+Mago recebe um Cajado).
+*/
+
+//Variáveis
+/*
+string classe;
+char itemInicial;
+
+//Entrada
+Console.WriteLine("==========================================================================================");
+Console.WriteLine("Bem-vindo ao mundo de RPG! Antes de começar sua aventura, escolha sua classe de personagem:");
+Console.WriteLine("==========================================================================================");
+
+Console.WriteLine("Escolha sua classe de personagem para começar a aventura :");
+Console.WriteLine("G - Guerreiro");
+Console.WriteLine("M - Mago");
+Console.WriteLine("A - Arqueiro");
+Console.Write("Digite a letra correspondente à classe escolhida: ");
+classe = Console.ReadLine().ToUpper();
+
+//Processamento
+
+switch (classe)
+{
+    case "G":
+        itemInicial = 'E'; // Espada
+        Console.WriteLine("Bem-vindo, Guerreiro! Você começa sua jornada com uma Espada.");
+        break;
+    case "M":
+        itemInicial = 'C'; // Cajado
+        Console.WriteLine("Bem-vindo, Mago! Você começa sua jornada com um Cajado.");
+        break;
+    case "A":
+        itemInicial = 'B'; // Arco
+        Console.WriteLine("Bem-vindo, Arqueiro! Você começa sua jornada com um Arco.");
+        break;
+    default:
+        Console.WriteLine("Opção inválida. Por favor, escolha G, M ou A.");
+        break;
+}
+
+
+*/
+
+//Exercício 4
+/*
+ * Peça ao usuário que digite uma letra do alfabeto. Usando a técnica de fallthrough (empilhando os casos
+vazios do switch), verifique se a letra digitada é uma vogal (A, E, I, O, U minúsculas ou maiúsculas) e
+exiba "É uma vogal". No default, exiba "É uma consoante" (assumindo que o usuário digitou uma letra
+válida).
+*/
+/*
+ 
+char letra;
+
+Console.WriteLine("Informe uma letra:");
+letra = Convert.ToChar(Console.ReadLine());
+
+switch (letra)
+{
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+    case 'A':
+    case 'E':
+    case 'I':
+    case 'O':
+    case 'U':
+        Console.WriteLine("A letra é uma vogal.");
+        break;
+    default:
+        Console.WriteLine("A letra é uma consoante !");
+        break;
+}
+
+*/
+
+//Exercício 5
+/*
+ * Peça ao usuário que digite um número de 1 a 7, representando os dias da semana (1 = Domingo, 2 =
+Segunda, etc.). Use o switch com fallthrough para:
+● Imprimir "Fim de semana" para os dias 1 e 7.
+● Imprimir "Dia útil" para os dias de 2 a 6.
+*/
+
+//Variáveis
+/*
+ * 
+int numero;
+
+//Entrada
+
+Console.WriteLine("Informe o número para o dia da semana conrrespondente:");
+numero = Convert.ToInt32(Console.ReadLine());
+
+//Processamento e Saída
+
+switch (numero)
+{
+    case 1:
+        Console.WriteLine("Fim de semana");
+        break;
+    case 2:
+        Console.WriteLine("Dia útil");
+        break;
+    case 3:
+        Console.WriteLine("Dia útil");
+        break;
+    case 4:
+        Console.WriteLine("Dia útil");
+        break;
+    case 5:
+        Console.WriteLine("Dia útil");
+        break;
+    case 6:
+        Console.WriteLine("Dia útil");
+        break;
+    case 7:
+        Console.WriteLine("Fim de semana");
+        break;
+    default:
+        Console.WriteLine("Número inválido. Por favor, informe um número entre 1 e 7.");
+        break;
+}
+
+*/
+
+//Exercício 6
+/*
+ * Solicite ao usuário o número de um mês (1 a 12). Agrupe os casos para imprimir a estação do ano
+aproximada correspondente no Brasil:
+● 12, 1, 2: Verão
+● 3, 4, 5: Outono
+● 6, 7, 8: Inverno
+● 9, 10, 11: Primavera
+*/
+
+//Variáveis
+
+/*
+
+int mês;
+
+Console.WriteLine("Informe o número de um mês conrrespondente (1 a 12):");
+Console.WriteLine("=====================================================");
+Console.WriteLine("1-Janeiro");
+Console.WriteLine("2-Fevereiro");
+Console.WriteLine("3-Março");
+Console.WriteLine("4-Abril");
+Console.WriteLine("5-Maio");
+Console.WriteLine("6-Junho");
+Console.WriteLine("7-Julho");
+Console.WriteLine("8-Agosto");
+Console.WriteLine("9-Setembro");
+Console.WriteLine("10-Outubro");
+Console.WriteLine("11-Novembro");
+Console.WriteLine("12-Dezembro");
+Console.WriteLine("=======================================================");
+mês = Convert.ToInt32(Console.ReadLine());
+
+
+switch ( mês)
+    {
+    case 12:
+    case 1:
+    case 2:
+        Console.WriteLine("Verão");
+        break;
+    case 3:
+    case 4:
+    case 5:
+        Console.WriteLine("Outono");
+        break;
+    case 6:
+    case 7:
+    case 8:
+        Console.WriteLine("Inverno");
+        break;
+    case 9:
+    case 10:
+    case 11:
+        Console.WriteLine("Primavera");
+        break;
+    default:
+        Console.WriteLine("Número inválido. Por favor, informe um número entre 1 e 12.");
+        break;
+}
+
+*/
+
+
+//Exercício 7
+
+/*
+ * Crie um programa que peça ao usuário para digitar dois números decimais (double). Em seguida, exiba um
+menu de operadores matemáticos (+, -, *, /). Capture o operador em uma variável char. Use o switch para
+realizar o cálculo correspondente e imprimir o resultado. No caso da divisão, tente não permitir divisões
+por zero!
+*/
+
+/*
+
+using System;
+
+namespace CalculadoraSimples
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1, num2, resultado = 0;
+            char operador;
+            bool operadorValido = true;
+
+            Console.WriteLine("--- Calculadora ---");
+
+            // 1. Ler o primeiro número
+            Console.Write("\nDigite o primeiro número: ");
+            num1 = Convert.ToDouble(Console.ReadLine());
+
+            // 2. Ler o operador
+            Console.Write("Digite o operador (+, -, *, /): ");
+            operador = Convert.ToChar(Console.ReadLine());
+
+            // 3. Ler o segundo número
+            Console.Write("Digite o segundo número: ");
+            num2 = Convert.ToDouble(Console.ReadLine());
+
+            // 4. Processar o cálculo
+            switch (operador)
+            {
+                case '+':
+                    resultado = num1 + num2;
+                    break;
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    // Verifica divisão por zero
+                    if (num2 != 0)
+                        resultado = num1 / num2;
+                    else
+                    {
+                        Console.WriteLine("Erro: Divisão por zero não permitida.");
+                        operadorValido = false;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Operador inválido.");
+                    operadorValido = false;
+                    break;
+            }
+
+            // 5. Exibir resultado
+            if (operadorValido)
+            {
+                Console.WriteLine($"Resultado: {num1} {operador} {num2} = {resultado}");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+*/
+
+//Exercício 8
+/*
+ * Crie um menu de lanchonete exibindo o código, produto e preço:
+● 100 - Cachorro Quente (R$ 15,00)
+● 101 - Bauru (R$ 18,00)
+● 102 - Hambúrguer (R$ 20,00)
+● 103 - Cheeseburguer (R$ 22,00)
+● 104 - Refrigerante (R$ 8,00)
+O programa deve ler o código do item e a quantidade desejada. O switch deve encontrar o preço do
+produto selecionado, multiplicar pela quantidade e exibir o valor total a ser pago.
+*/
+
+/*
+
+//Variáveis
+int codigoProduto, quantidade;
+double preçoProduto, valorTotal;
+
+//Entrada
+Console.WriteLine("Bem-vindo à Lanchonete! Aqui está o nosso menu:");
+Console.WriteLine("===============================================");
+Console.WriteLine("Código - Produto - Preço");
+Console.WriteLine("100 - Cachorro Quente - R$ 15,00");
+Console.WriteLine("101 - Bauru - R$ 18,00");
+Console.WriteLine("102 - Hambúrguer - R$ 20,00");
+Console.WriteLine("103 - Cheeseburguer - R$ 22,00");
+Console.WriteLine("104 - Refrigerante - R$ 8,00");
+Console.WriteLine("===============================================");
+Console.Write("Digite o código do produto desejado: ");
+codigoProduto = Convert.ToInt32(Console.ReadLine());
+Console.Write("Digite a quantidade desejada: ");
+quantidade = Convert.ToInt32(Console.ReadLine());
+
+//Processamento e saída
+switch (codigoProduto)
+{
+    case 100:
+        preçoProduto = 15.00;
+        break;
+    case 101:
+        preçoProduto = 18.00;
+        break;
+    case 102:
+        preçoProduto = 20.00;
+        break;
+    case 103:
+        preçoProduto = 22.00;
+        break;
+    case 104:
+        preçoProduto = 8.00;
+        break;
+    default:
+        Console.WriteLine("Código de produto inválido.");
+        return;
+        
+}
+valorTotal = preçoProduto * quantidade;
+Console.WriteLine("O valor total a ser pago é: R$" + valorTotal.ToString("F2"));
+
+*/
+
+//Exercício 9
+/*
+ * Um produto custa um valor base e é vendido para diferentes estados, cada um com uma taxa de imposto
+diferente.
+Peça o valor base do produto e a sigla do estado destino (SP, RJ, MG, ES). Calcule e mostre o valor final
+usando a tabela abaixo:
+● SP: +10%
+● RJ: +15%
+● MG: +12%
+● ES: +8%
+
+*/
+
+//Variáveis
+int valorBase,valorFinal,valorImposto;
+string estadoDestino;
+
+//Entrada
+Console.WriteLine("Informe o valor base do produto:");
+valorBase = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("SP - São Paulo.....10%");
+Console.WriteLine("RJ - Rio de Janeiro.....15%");
+Console.WriteLine("MG - Minas Gerais.....12%");
+Console.WriteLine("ES - Espírito Santo.....8%");
+Console.WriteLine("Informe o imposto do estado que será enviado o produto:");
+
+estadoDestino = Console.ReadLine().ToUpper();
+valorImposto = 0;
+if (valorImposto == 0)
+{
+    Console.WriteLine("Imposto inválido!Tente novemente ");
+}
+else
+    if (estadoDestino ==  )
+    {
+        Console.WriteLine("O produto será enviado para São Paulo");
+    }
+else
+if (valorImposto == 0.15)
+    {
+        Console.WriteLine("O produto será enviado para Rio de Janeiro");
+    }
+else
+    if (valorImposto == 0.12)
+    {
+        Console.WriteLine("O produto será enviado para Minas Gerais");
+    }
+else
+    if (valorImposto == 0.08)
+    {
+        Console.WriteLine("O produto será enviado para Espírito Santo");
+    }
+else
+{
+    Console.WriteLine("Estado inválido!Tente novamente");
+}
 
