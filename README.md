@@ -277,3 +277,271 @@ else
 
 
 
+//Swith Case dia 06 05 2026
+
+
+
+
+//Variáveis
+//Atividade 1
+
+/*
+
+//Ler número de 1 a 7 e imprimir o dia correspondente
+
+int numero;
+
+//Entrada
+
+Console.WriteLine("Informe o número para o dia da semana conrrespondente:");
+numero = Convert.ToInt32(Console.ReadLine());
+
+//Processamento e Saída
+
+switch (numero)
+{
+    case 1:
+        Console.WriteLine("Domingo");
+        break;
+    case 2:
+        Console.WriteLine("Segunda-feira");
+        break;
+    case 3:
+        Console.WriteLine("Terça-feira");
+        break;
+    case 4:
+        Console.WriteLine("Quarta-feira");
+        break;
+    case 5:
+        Console.WriteLine("Quinta-feira");
+        break;
+    case 6:
+        Console.WriteLine("Sexta-feira");
+        break;
+    case 7:
+        Console.WriteLine("Sábado");
+        break;
+    default:
+        Console.WriteLine("Número inválido. Por favor, informe um número entre 1 e 7.");
+        break;
+}
+*/
+
+/*
+ 
+//Variáveis
+//Atividade 2 
+
+//Ler letra e identificar usando fallthrough para agrupar vogais
+
+char letra;
+
+Console.WriteLine("Informe uma letra:");
+letra = Convert.ToChar(Console.ReadLine());
+
+switch (letra)
+{
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+    case 'A':
+    case 'E':
+    case 'I':
+    case 'O':
+    case 'U':
+        Console.WriteLine("A letra é uma vogal.");
+        break;
+    default:
+        Console.WriteLine("A letra é uma consoante !");
+        break;
+}
+*/
+
+
+
+//Variáveis
+//Atividade 3
+
+//Ler código do produto e exibir nome e preço
+
+/*
+
+double codigoProduto, preçoproduto;
+string nomeProduto;
+
+//Entrada
+Console.WriteLine("Cachorro-Quente.....001");
+Console.WriteLine("X-Salada.....002");
+Console.WriteLine("X-Bacon.....003");
+Console.WriteLine("Bauru.....004");
+Console.WriteLine("Refrigerante.....005");
+
+Console.WriteLine("\nInforme o código do produto:");
+codigoProduto = Convert.ToDouble(Console.ReadLine());
+Console.Clear();
+
+//Processamento e Saída
+
+switch (codigoProduto)
+{
+    case 1:
+        nomeProduto = "Cachorro Quente";
+        preçoproduto = 10.00;
+        Console.WriteLine($"Produto: {nomeProduto}, Preço: R${preçoproduto}");
+        break;
+    case 2:
+        nomeProduto = "X-Salada";
+        preçoproduto = 15.00;
+        Console.WriteLine($"Produto: {nomeProduto}, Preço: R${preçoproduto}");
+        break;
+    case 3:
+        nomeProduto = "X-Bacon";
+        preçoproduto = 18.00;
+        Console.WriteLine($"Produto: {nomeProduto}, Preço: R${preçoproduto}");
+        break;
+    case 4:
+        nomeProduto = "Bauru";
+        preçoproduto = 12.00;
+        Console.WriteLine($"Produto: {nomeProduto}, Preço: R${preçoproduto}");
+        break;
+    case 5:
+        nomeProduto = "Refrigerante";
+        preçoproduto = 8.00;
+        Console.WriteLine($"Produto: {nomeProduto}, Preço: R${preçoproduto}");
+        break;
+    default:
+        Console.WriteLine("Código de produto inválido,sabe ler não resto de aborto?");
+        break;
+}
+
+if (codigoProduto == 1 || codigoProduto == 2 || codigoProduto == 3 || codigoProduto == 4 || codigoProduto == 5)
+{
+    Console.WriteLine("Obrigado pela preferência!");
+}
+else
+{
+    Console.WriteLine("Tente novamente com um código válido.");
+}
+*/
+/*
+ * 
+ *Atividade 4
+ *
+using System;
+
+namespace CalculadoraSimples
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1, num2, resultado = 0;
+            char operador;
+            bool operadorValido = true;
+
+            Console.WriteLine("--- Calculadora ---");
+
+            // 1. Ler o primeiro número
+            Console.Write("\nDigite o primeiro número: ");
+            num1 = Convert.ToDouble(Console.ReadLine());
+
+            // 2. Ler o operador
+            Console.Write("Digite o operador (+, -, *, /): ");
+            operador = Convert.ToChar(Console.ReadLine());
+
+            // 3. Ler o segundo número
+            Console.Write("Digite o segundo número: ");
+            num2 = Convert.ToDouble(Console.ReadLine());
+
+            // 4. Processar o cálculo
+            switch (operador)
+            {
+                case '+':
+                    resultado = num1 + num2;
+                    break;
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    // Verifica divisão por zero
+                    if (num2 != 0)
+                        resultado = num1 / num2;
+                    else
+                    {
+                        Console.WriteLine("Erro: Divisão por zero não permitida.");
+                        operadorValido = false;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Operador inválido.");
+                    operadorValido = false;
+                    break;
+            }
+
+            // 5. Exibir resultado
+            if (operadorValido)
+            {
+                Console.WriteLine($"Resultado: {num1} {operador} {num2} = {resultado}");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+*/
+
+/*
+
+//Atividade 5 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Digite a idade: ");
+        if (int.TryParse(Console.ReadLine(), out int idade))
+        {
+            string categoria;
+
+            // Lógica de classificação
+            if (idade >= 0 && idade <= 12)
+            {
+                categoria = "Infantil";
+            }
+            else
+                if (idade >= 13 && idade <= 17)
+            {
+                categoria = "Juvenil";
+            }
+            else 
+                if (idade >= 18)
+            {
+                categoria = "Sênior";
+            }
+            else
+            {
+                categoria = "Idade inválida";
+            }
+
+            Console.WriteLine($"A categoria é: {categoria}");
+        }
+        else
+        {
+            Console.WriteLine("Por favor, insira um número válido.");
+        }
+    }
+}
+
+
+*/
+
+
+
