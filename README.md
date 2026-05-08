@@ -1169,6 +1169,19 @@ double novoPeso = Math.Round(pesoTerra * gravidade, 2);
 // Formatação em pt-BR sem depender de culturas do sistema
 string F(double v) => v.ToString("F2", CultureInfo.InvariantCulture).Replace('.', ',');
 
+
+/*
+
+
+
+//LINH DA LN MACEDO ACABAMENTOS
+
+https://liquid-tan-slwcyvlzzk.edgeone.app/
+
+
+
+*/
+
 Console.WriteLine($"\nSeu peso no planeta escolhido seria de {F(novoPeso)} kg");
 
 Console.WriteLine("\nPressione qualquer tecla para encerrar...");
