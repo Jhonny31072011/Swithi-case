@@ -1,3 +1,6 @@
+/*
+
+
 C#
 
 20/03/2026
@@ -16,7 +19,7 @@ ano = Convert.ToInt32(Console.ReadLine());
 //Processamento
 idade = 2026 - ano;  //calculo da idade
 
- //saída
+//saída
 Console.WriteLine($"Bom dia, {nome}, seja bem Vindo!");
 Console.WriteLine($"{nome}, você tem {idade} anos!");
 Console.WriteLine($"{nome}, ano que vem você fará {idade + 1} anos!");
@@ -25,10 +28,11 @@ Console.WriteLine($"{nome}, ano que vem você fará {idade + 1} anos!");
 
 
 
-24/03/2026
+24 / 03 / 2026
 
 
-/*//Exercício 1
+/*
+//Exercício 1
 //Variáveis
 int numA, numB;
 
@@ -69,7 +73,7 @@ Console.WriteLine($"Salário Bruto: R${SB:F2}");
 Console.WriteLine($"Total de descontos: R${TD:F2}");
 Console.WriteLine($"Salário Líquido: R$ {SL:F2}");
 
-*/
+
 //Exercício 3
 
 //Variáveis
@@ -98,7 +102,7 @@ double val1, val2, media;
 
 //Entrada
 Console.WriteLine("Informe o primeiro valor: ");
-val1 =Convert.ToDouble(Console.ReadLine());
+val1 = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("Informe o segundo valor: ");
 val2 = Convert.ToDouble(Console.ReadLine());
 
@@ -107,7 +111,11 @@ media = (val1 + val2) / 2;
 
 //Saída
 Console.WriteLine($"A média entre {val1} e {val2} é {media}");
+
 /*
+ * 
+ * 
+ * 
 //Exercício 4 Dia 07 04 2026
 
 //Variáveis
@@ -157,20 +165,22 @@ Console.WriteLine($"Salário Líquido.....:R$ {SL:F2}");
 
 */
 //Exercício 6 
-
+/*
+ * Escreva um programa que leia um número inteiro de 3 algarismos e imprima o número invertido. Por exemplo, se o usuário digitar 123, o programa deve imprimir 321.
+*/
 //Variáveis
-
+/*
 int N, C, D, U, M;
 
 //Entrada
 Console.WriteLine("Informe um número com 3 algarismos:");
-N=Convert.ToInt32(Console.ReadLine());
+N = Convert.ToInt32(Console.ReadLine());
 
 //Processamento
 
 C = N / 100;
 D = (N % 100) / 10;
-U= (N % 100) % 10;
+U = (N % 100) % 10;
 
 M = (U * 100) + (D * 10) + C;
 
@@ -243,7 +253,7 @@ else
 */
 //Exemplo 3
 //Varíaveis
-
+/*
 int num1, num2;
 
 //Entrada
@@ -276,7 +286,7 @@ else
 }
 
 
-06/06/2026
+06 / 06 / 2026
 //Swith Case e IF atividade de 1 a 10
 
 
@@ -998,47 +1008,168 @@ usando a tabela abaixo:
 
 */
 
+
+/*
 //Variáveis
-int valorBase,valorFinal,valorImposto;
-string estadoDestino;
+using System;
+using System.Globalization;
 
-//Entrada
-Console.WriteLine("Informe o valor base do produto:");
-valorBase = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("SP - São Paulo.....10%");
-Console.WriteLine("RJ - Rio de Janeiro.....15%");
-Console.WriteLine("MG - Minas Gerais.....12%");
-Console.WriteLine("ES - Espírito Santo.....8%");
-Console.WriteLine("Informe o imposto do estado que será enviado o produto:");
+Console.WriteLine("Cálculo do preço final por estado (SP, RJ, MG, ES)\n");
 
-estadoDestino = Console.ReadLine().ToUpper();
-valorImposto = 0;
-if (valorImposto == 0)
+// Leitura do valor base
+Console.Write("Informe o valor base do produto (ex: 100,50): ");
+string? entrada = Console.ReadLine();
+if (string.IsNullOrWhiteSpace(entrada))
 {
-    Console.WriteLine("Imposto inválido!Tente novemente ");
-}
-else
-    if (estadoDestino ==  )
-    {
-        Console.WriteLine("O produto será enviado para São Paulo");
-    }
-else
-if (valorImposto == 0.15)
-    {
-        Console.WriteLine("O produto será enviado para Rio de Janeiro");
-    }
-else
-    if (valorImposto == 0.12)
-    {
-        Console.WriteLine("O produto será enviado para Minas Gerais");
-    }
-else
-    if (valorImposto == 0.08)
-    {
-        Console.WriteLine("O produto será enviado para Espírito Santo");
-    }
-else
-{
-    Console.WriteLine("Estado inválido!Tente novamente");
+    Console.WriteLine("Valor inválido.");
+    return;
 }
 
+// Normaliza vírgula para ponto para permitir entrada com ',' ou '.'
+entrada = entrada.Trim().Replace(',', '.');
+if (!decimal.TryParse(entrada, NumberStyles.Number, CultureInfo.InvariantCulture, out decimal valorBase) || valorBase < 0)
+{
+    Console.WriteLine("Valor inválido. Informe um número positivo.");
+    return;
+}
+
+// Leitura da sigla do estado
+Console.Write("Informe a sigla do estado destino (SP, RJ, MG, ES): ");
+string? estado = Console.ReadLine()?.Trim().ToUpperInvariant();
+if (string.IsNullOrEmpty(estado))
+{
+    Console.WriteLine("Estado inválido.");
+    return;
+}
+
+// Determina a taxa via switch
+decimal taxa;
+switch (estado)
+{
+    case "SP":
+        taxa = 0.10m;
+        break;
+    case "RJ":
+        taxa = 0.15m;
+        break;
+    case "MG":
+        taxa = 0.12m;
+        break;
+    case "ES":
+        taxa = 0.08m;
+        break;
+    default:
+        Console.WriteLine("Estado inválido. Use: SP, RJ, MG ou ES.");
+        return;
+}
+
+// Cálculo
+decimal valorImposto = Math.Round(valorBase * taxa, 2);
+decimal valorFinal = Math.Round(valorBase + valorImposto, 2);
+
+// Formata para estilo pt-BR (substitui '.' por ',')
+string F(decimal v) => v.ToString("F2", CultureInfo.InvariantCulture).Replace('.', ',');
+
+// Saída
+Console.WriteLine("\n***** Resultado *****");
+Console.WriteLine($"Estado: {estado}");
+Console.WriteLine($"Valor base: R$ {F(valorBase)}");
+Console.WriteLine($"Imposto ({(taxa * 100):F0}%): R$ {F(valorImposto)}");
+Console.WriteLine($"Valor final: R$ {F(valorFinal)}");
+Console.WriteLine("*********************");
+
+Console.WriteLine("\nPressione qualquer tecla para encerrar...");
+Console.ReadKey();
+
+*/
+
+
+//Exercício 10
+/*
+ * A gravidade muda dependendo do planeta em que você está. Peça ao usuário que digite seu peso na Terra
+(em kg) e, em seguida, exiba um menu com opções de planetas do sistema solar (1 a 6):
+1. Mercúrio (Gravidade: 0.37)
+2. Vênus (Gravidade: 0.88)
+3. Marte (Gravidade: 0.38)
+4. Júpiter (Gravidade: 2.64)
+5. Saturno (Gravidade: 1.15)
+6. Urano (Gravidade: 1.17)
+Usando a estrutura switch, pegue a gravidade relativa correspondente ao planeta escolhido, calcule o "novo
+peso" (fórmula: PesoTerra * GravidadePlaneta) e exiba para o usuário a mensagem: "Seu peso no planeta
+escolhido seria de X kg
+*/
+
+
+using System;
+using System.Globalization;
+
+Console.WriteLine("Cálculo do peso em outro planeta\n");
+
+// Leitura do peso na Terra
+Console.Write("Informe seu peso na Terra (kg): ");
+string? entradaPeso = Console.ReadLine();
+if (string.IsNullOrWhiteSpace(entradaPeso))
+{
+    Console.WriteLine("Peso inválido.");
+    return;
+}
+entradaPeso = entradaPeso.Trim().Replace(',', '.');
+if (!double.TryParse(entradaPeso, NumberStyles.Number, CultureInfo.InvariantCulture, out double pesoTerra) || pesoTerra < 0)
+{
+    Console.WriteLine("Peso inválido. Informe um número positivo.");
+    return;
+}
+
+// Menu de planetas
+Console.WriteLine("\nEscolha o planeta:");
+Console.WriteLine("1 - Mercúrio (Gravidade: 0.37)");
+Console.WriteLine("2 - Vênus    (Gravidade: 0.88)");
+Console.WriteLine("3 - Marte    (Gravidade: 0.38)");
+Console.WriteLine("4 - Júpiter  (Gravidade: 2.64)");
+Console.WriteLine("5 - Saturno  (Gravidade: 1.15)");
+Console.WriteLine("6 - Urano    (Gravidade: 1.17)");
+Console.Write("Digite o número (1-6): ");
+
+string? entradaOpcao = Console.ReadLine();
+if (!int.TryParse(entradaOpcao, out int opcao))
+{
+    Console.WriteLine("Opção inválida.");
+    return;
+}
+
+double gravidade;
+switch (opcao)
+{
+    case 1:
+        gravidade = 0.37;
+        break;
+    case 2:
+        gravidade = 0.88;
+        break;
+    case 3:
+        gravidade = 0.38;
+        break;
+    case 4:
+        gravidade = 2.64;
+        break;
+    case 5:
+        gravidade = 1.15;
+        break;
+    case 6:
+        gravidade = 1.17;
+        break;
+    default:
+        Console.WriteLine("Opção inválida. Escolha um número de 1 a 6.");
+        return;
+}
+
+// Cálculo do novo peso
+double novoPeso = Math.Round(pesoTerra * gravidade, 2);
+
+// Formatação em pt-BR sem depender de culturas do sistema
+string F(double v) => v.ToString("F2", CultureInfo.InvariantCulture).Replace('.', ',');
+
+Console.WriteLine($"\nSeu peso no planeta escolhido seria de {F(novoPeso)} kg");
+
+Console.WriteLine("\nPressione qualquer tecla para encerrar...");
+Console.ReadKey();
