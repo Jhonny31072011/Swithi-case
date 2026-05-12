@@ -1186,3 +1186,162 @@ Console.WriteLine($"\nSeu peso no planeta escolhido seria de {F(novoPeso)} kg");
 
 Console.WriteLine("\nPressione qualquer tecla para encerrar...");
 Console.ReadKey();
+
+//DESAFIO DO DIA 12/05/2026
+
+/*
+ * O Sistema de RH da "TechCorp"
+Contexto:
+Você foi contratado como desenvolvedor júnior pela TechCorp, uma grande empresa de tecnologia. Sua
+primeira grande missão é desenvolver um sistema de terminal para o setor de Recursos Humanos. Esse
+sistema vai calcular o Salário Final (Salário Base + Bônus) dos funcionários no final do ano, baseado no
+cargo e em critérios específicos de desempenho.
+📋 Requisitos do Sistema
+O programa deve solicitar inicialmente os seguintes dados do funcionário:
+1. Nome do funcionário (texto)
+2. Salário Base (decimal/double)
+3. Código do Cargo (inteiro), exibindo o seguinte menu:
+○ 1 - Desenvolvedor Júnior
+○ 2 - Desenvolvedor Pleno
+○ 3 - Desenvolvedor Sênior
+○ 4 - Gerente de Projetos
+⚙️ Regras de Negócio (A Lógica Central)
+Utilize a estrutura switch-case para avaliar o código do cargo. Dentro de CADA case, o programa deve
+fazer uma pergunta adicional específica para aquele cargo e usar um if-else para calcular o bônus:
+● Case 1 (Desenvolvedor Júnior):
+○ Pergunta: "O funcionário possui certificação ativa na linguagem C#? (S/N)"
+○ IF: Se digitar 'S', ganha um bônus de 15% sobre o salário base.
+○ ELSE: Se digitar 'N', ganha um bônus padrão de 5%.
+● Case 2 (Desenvolvedor Pleno):
+○ Pergunta: "Quantos anos de empresa o funcionário possui?" (Ler um número inteiro).
+○ IF: Se tiver 3 anos ou mais, ganha um bônus de 20%.
+○ ELSE: Se tiver menos de 3 anos, ganha um bônus de 10%.
+● Case 3 (Desenvolvedor Sênior):
+○ Pergunta: "O funcionário atua como Líder Técnico da equipe? (S/N)"
+○ IF: Se 'S', ganha um bônus de 30% E MAIS um adicional fixo de R$ 500,00.
+○ ELSE: Se 'N', ganha apenas o bônus de 25%.
+● Case 4 (Gerente de Projetos):
+○ Pergunta: "O gerente bateu a meta de entregas no prazo? (S/N)"
+○ IF: Se 'S', ganha um bônus de 40%.
+○ ELSE: Se 'N', ganha um bônus de resgate de apenas 10%.
+● Default:
+○ Exibir a mensagem: "Erro: Código de cargo inexistente." e o salário final deve ser R$ 0,00.
+🖥️ Saída Esperada (O que imprimir no final)
+Após passar pelo switch e pelo if-else, o programa deve limpar a tela (Console.Clear()) e exibir um
+"Holerite Resumido" com os seguintes dados:
+1. Nome do Funcionário
+2. Cargo (Escrito por extenso, não o código)
+3. Valor do Salário Base
+4. Valor Total do Salário Final (com o bônus já somado)
+💡 Dicas de Ouro para o Desenvolvedor:
+1. Escopo de Variáveis: Declare as variáveis que vão guardar o nome do cargo (string) e o salário final
+(double) ANTES de abrir o bloco switch. Se você declarar dentro do case, não conseguirá imprimi-las
+no final do código!
+2. Maiúsculas e Minúsculas: Ao ler respostas como "S" ou "N", lembre-se que o usuário pode digitar
+"s" minúsculo.
+3. Cálculo de Porcentagem: Para calcular 15% de um valor em C#, você pode multiplicar o valor por
+0.15 ou por 15 / 100.0.
+
+*/
+
+
+//Desafio De Swith Case
+
+//Variáveis para armazenar os dados do funcionário
+
+string nomeFuncionario;
+double salarioBase, salarioFinal = 0;
+int codigoCargo;
+
+//Solicitar os dados do funcionário
+
+Console.Write($"Digite o nome do funcionário:");
+
+nomeFuncionario = Console.ReadLine();
+Console.Write("Digite o salário base do funcionário: ");
+salarioBase = double.Parse(Console.ReadLine());
+Console.WriteLine("Digite o código do cargo do funcionário:");
+Console.WriteLine("\n==========================");
+Console.WriteLine("1 - Desenvolvedor Júnior");
+Console.WriteLine("2 - Desenvolvedor Pleno");
+Console.WriteLine("3 - Desenvolvedor Sênior");
+Console.WriteLine("4 - Gerente de Projetos");
+Console.WriteLine("==========================");
+
+codigoCargo = int.Parse(Console.ReadLine());
+string nomeCargo = "";
+
+
+// switch-case para avaliar o código do cargo
+
+switch (codigoCargo)
+{
+    case 1:
+        nomeCargo = "Desenvolvedor Júnior";
+        Console.Write("O funcionário possui certificação ativa na linguagem C#? (S/N): ");
+        string respostaJunior = Console.ReadLine().ToUpper();
+        if (respostaJunior == "S")
+        {
+            salarioFinal = salarioBase + (salarioBase * 0.15);
+            Console.WriteLine($"Olá,{nomeFuncionario} Seu novo salário é R${salarioFinal}");
+        }
+        else
+        {
+            salarioFinal = salarioBase + (salarioBase * 0.05);
+            Console.WriteLine($"Olá,{nomeFuncionario} Seu novo salário é R${salarioFinal}");
+        }
+        break;
+    case 2:
+        nomeCargo = "Desenvolvedor Pleno";
+        Console.Write("Quantos anos de empresa o funcionário possui? ");
+        int anosEmpresa = int.Parse(Console.ReadLine());
+        if (anosEmpresa >= 3)
+        {
+            salarioFinal = salarioBase + (salarioBase * 0.20);
+            Console.WriteLine($"Olá,{nomeFuncionario} Seu novo salário é R${salarioFinal}");
+        }
+        else
+        {
+            salarioFinal = salarioBase + (salarioBase * 0.10);
+            Console.WriteLine($"Olá,{nomeFuncionario} Seu novo salário é R${salarioFinal}");
+        }
+        break;
+    case 3:
+        nomeCargo = "Desenvolvedor Sênior";
+        Console.Write("O funcionário atua como Líder Técnico da equipe? (S/N): ");
+        string respostaSenior = Console.ReadLine().ToUpper();
+        if (respostaSenior == "S")
+        {
+            salarioFinal = salarioBase + (salarioBase * 0.30) + 500;
+            Console.WriteLine($"Olá,{nomeFuncionario} Seu novo salário é R${salarioFinal}");
+        }
+        else
+        {
+            salarioFinal = salarioBase + (salarioBase * 0.25);
+            Console.WriteLine($"Olá,{nomeFuncionario} Seu novo salário é R${salarioFinal}");
+        }
+        break;
+    case 4:
+        nomeCargo = "Gerente de Projetos";
+        Console.Write("O gerente bateu a meta de entregas no prazo? (S/N): ");
+        string respostaGerente = Console.ReadLine().ToUpper();
+        if (respostaGerente == "S")
+        {
+            salarioFinal = salarioBase + (salarioBase * 0.40);
+            Console.WriteLine($"Olá,{nomeFuncionario} Seu novo salário é R${salarioFinal}");
+        }
+        else
+        {
+            salarioFinal = salarioBase + (salarioBase * 0.10);
+            Console.WriteLine($"Olá,{nomeFuncionario} Seu novo salário é R${salarioFinal}");
+        }
+        break;
+    default:
+        Console.WriteLine("Erro: Código de cargo inexistente.");
+        salarioFinal = 0;
+        break;
+}
+
+
+
+
