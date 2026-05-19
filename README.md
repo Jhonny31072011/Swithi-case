@@ -1345,3 +1345,102 @@ switch (codigoCargo)
 
 //Link da LN é só um protótipo https://liquid-tan-slwcyvlzzk.edgeone.app/
 
+
+// Atividade dia 19/05/2026
+
+/*
+
+//Soma Condicional
+// O programa solicita ao usuário que insira dois números e, em seguida, calcula a soma desses números.
+//Exercício 1 
+//Variáveis para armazenar os números inseridos pelo usuário
+
+int valores, somaMenor20 = 0;
+Console.WriteLine("Informe um valor inicial:");
+valores = Convert.ToInt32(Console.ReadLine());
+
+//Condicional para verificar se a soma dos valores é menor que 20
+
+
+while (valores != 0)
+{
+    if (valores < 20)
+    {
+        somaMenor20 = somaMenor20 + valores;
+        //Soma dos valores menores que 20
+    }
+    Console.Write("Informe outro valor para sair (digite 0):");
+    valores = Convert.ToInt32(Console.ReadLine());
+
+}
+
+//Saída do resultado
+
+Console.WriteLine($"A soma dos números menores que 20 é: {somaMenor20}");
+
+*/
+
+
+
+  
+  
+//Exercício 2 
+//Variáveis
+
+
+/*
+ 
+int Idade;
+double media;
+int somaIdade = 0, QNT = 0;
+
+
+
+Console.WriteLine("Informe a sua idade:");
+Idade = Convert.ToInt32(Console.ReadLine());
+
+//Processamento
+
+while (Idade >=0)
+{
+    somaIdade = somaIdade + Idade;
+    QNT++;
+    Console.WriteLine("Informe a sua idade (negativa para sair) ");
+    Idade = Convert.ToInt32(Console.ReadLine());
+}
+
+media = somaIdade / QNT;
+
+//Saída 
+
+Console.WriteLine($"A média de todas as idades válidas é: {(double) media} ");
+
+*/
+
+
+/*
+ 
+
+//Exercício 3
+//Variáveis 
+
+int senha, senhaCorreta = 1234;
+
+Console.WriteLine("Informe a senha:");
+senha = Convert.ToInt32(Console.ReadLine());
+
+while (senha != senhaCorreta)
+{
+    Console.WriteLine("Senha incorreta. Tente novamente:");
+    senha = Convert.ToInt32(Console.ReadLine());
+}
+
+if (senha == senhaCorreta)
+{
+    Console.WriteLine("Senha correta. Acesso concedido.");
+}
+
+*/
+
+
+
