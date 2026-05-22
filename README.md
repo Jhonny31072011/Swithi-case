@@ -1442,5 +1442,183 @@ if (senha == senhaCorreta)
 
 */
 
+/*
+//atividade 1 - Slide
+//variáveis
+int valor;
+int somaMenor20 = 0;
+
+//entrada de dados
+Console.WriteLine("Informe um valor inicial: ");
+valor = Convert.ToInt32(Console.ReadLine());
+
+//processamento
+while (valor != 0)
+{
+    if (valor < 20)
+    {
+        somaMenor20 = somaMenor20 + valor;
+        //somaMenor20 += valor;
+    }
+
+    Console.WriteLine("Informe outro valor (0 para Sair) :");
+    valor = Convert.ToInt32(Console.ReadLine());
+}
+//SAÍDA
+Console.WriteLine($"A soma dos números menores que 20 é: {somaMenor20}");
+*/
+/*
+//Atidade 2 - Slides
+//variáveis
+int idade;
+double media;
+int soma = 0, qtde = 0;
+
+//entrada
+Console.WriteLine("Informe uma idade: ");
+idade = Convert.ToInt32(Console.ReadLine());
+
+//processamento
+while (idade >= 0)
+{
+    soma = soma + idade;
+    qtde++;
+
+    Console.WriteLine("Informe outra idade (negativa para sair): ");
+    idade = Convert.ToInt32(Console.ReadLine());
+}
+
+media = soma / qtde;
+
+//Saída
+Console.WriteLine($"A média de todas as idades é {(double)media}");
+
+*/
+/*
+//Exercício 3 - Slides
+//Variáveis
+
+int senha = 1234;
+int senhaInformada;
+
+Console.WriteLine("Informe a senha:");
+senhaInformada = Convert.ToInt32(Console.ReadLine());
+
+while (senhaInformada != senha) 
+{
+    Console.WriteLine("Senha incorreta, tente novamente:");
+    senhaInformada = Convert.ToInt32(Console.ReadLine());
+}
+
+Console.WriteLine("Senha correta,acesso liberado!");
+*/
+
+
+//Exercício 4 - Slides
+//Variáveis
+
+int numero, maior;
+
+//Entrada
+
+Console.WriteLine("Informe um número para começar:");
+numero = Convert.ToInt32(Console.ReadLine());
+maior = numero;
+
+
+//Processamento
+
+while (numero >= 0)
+{
+    Console.WriteLine("Informe outro número (NEGATIVO PARA SAIR):");
+    numero = Convert.ToInt32(Console.ReadLine());
+
+    if (numero > maior)
+
+    {
+        maior = numero;
+    }
+}
+
+
+Console.WriteLine($"O maior número digitado é o {maior}");
+
+
+
+/*
+//Variáveis
+int numero_adivinha = 7;
+int tentativas = 0;
+int numero_digitado = 0;
+
+Console.WriteLine("Tente acertar o número que eu pensei:");
+int numero_usuario = Convert.ToInt32(Console.ReadLine());
+
+while (numero_usuario != numero_adivinha)
+{
+    Console.WriteLine("Número incorreto, tente novamente:");
+    numero_usuario = Convert.ToInt32(Console.ReadLine());
+
+
+if (numero_usuario == numero_adivinha)
+{
+    Console.WriteLine("Parabéns, você acertou o número!");
+}
+else
+{
+    Console.WriteLine("Número incorreto, tente novamente:");
+    numero_usuario = Convert.ToInt32(Console.ReadLine());
+tentativas++;
+}
+Console.ReadLine($"Quantidade de tentativas: {tentativas}");
+*/
+
+//Exercício 6 - Slides
+
+//Variáveis
+
+/*
+ Menu Interativo
+Mostre o menu: 1-Dizer Olá, 2-Mostrar
+Ano, 3-Sair. Leia a opção e execute a
+ação correspondente. Repita enquanto o
+usuário não digitar 3.
+*/
+
+/*
+
+int opcao;
+int anoAtual = 2026;
+Console.WriteLine("===============");
+Console.WriteLine("1- Dizer Olá.");
+Console.WriteLine("2-Mostrar Ano");
+Console.WriteLine("3-Sair");
+Console.WriteLine("===============");
+
+Console.WriteLine("\nDigite a opção desejada:");
+opcao = Convert.ToInt32(Console.ReadLine());
+
+while (opcao != 3)
+{
+    switch (opcao)
+    {
+        case 1:
+            Console.WriteLine("Olá!");
+            break;
+        case 2:
+            Console.WriteLine($"O ano atual é {anoAtual}");
+            break;
+        default:
+            Console.WriteLine("Opção inválida, tente novamente.");
+            break;
+    }
+    Console.WriteLine("\nDigite a opção desejada:");
+    opcao = Convert.ToInt32(Console.ReadLine());
+}
+Console.WriteLine("Programa encerrado. Até mais!");
+
+
+*/
+
 
 
