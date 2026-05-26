@@ -1622,3 +1622,90 @@ Console.WriteLine("Programa encerrado. Até mais!");
 
 
 
+//Exercíicio 1 26/05/2026
+
+
+int opcao = 1;
+
+while (opcao != 0)
+{
+
+    Console.WriteLine("=====================================================================");
+    Console.WriteLine("                      MENU DE CONTROLE LAÇO WHILE                    ");
+    Console.WriteLine("======================================================================");
+    Console.WriteLine("1 - Exercicio: Contagem Regressiva");
+    Console.WriteLine("2 - Exercício: Somador de Números (Até Digitar 0)");
+    Console.WriteLine("3 - Exercício: Validação de Nota (0 a 10)");
+    Console.WriteLine("0 - Sair do Programa");
+    Console.WriteLine("======================================================================");
+    Console.Write("\nDigite a opção desejada: ");
+    opcao = Convert.ToInt32(Console.ReadLine());
+
+
+    switch (opcao)
+
+    {
+
+        case 1:
+
+            Console.WriteLine("Contagem Regressiva:");
+            int numero1 = Convert.ToInt32(Console.ReadLine());
+            while (numero1 >= 0)
+            {
+                Console.WriteLine($"{numero1}");
+                Console.Beep(165,10000); // Emite um som a cada número pode ser mais agudo ou mais grave dependendo do número
+                Thread.Sleep(1000); // Pausa  por 1 segundo
+                numero1--;
+            }
+            Console.WriteLine("Foguete Lançado!");
+            break;
+        case 2:
+
+            Console.WriteLine("Somador de Números (Digite 0 para parar):");
+            int soma = 0;
+            int acumuladora = 0;
+            int numero = 1;
+
+            {
+                Console.Write("Digite um número: ");
+                numero = Convert.ToInt32(Console.ReadLine());
+                soma += numero;
+            } 
+            while (numero != 0)
+          
+            if (numero != 0)
+            {
+               soma = acumuladora + numero;
+            }
+            Console.WriteLine($"A soma total é: {soma}");
+            Console.ReadKey(); // Espera qualquer tecla para sair .
+            break;
+        case 3:
+
+            Console.WriteLine("Validação de Nota (0 a 10):");
+            int nota;
+
+            {
+                Console.Write("Digite uma nota (0 a 10): ");
+                nota = Convert.ToInt32(Console.ReadLine());
+                if (nota < 0 || nota > 10)
+                {
+                    Console.WriteLine("Nota inválida. Tente novamente.");
+                }
+            } while (nota < 0 || nota > 10) ;
+            Console.WriteLine($"Nota válida: {nota}");
+            break;
+        case 0:
+            Console.WriteLine("Saindo do programa...");
+            break;
+        default:
+            Console.WriteLine("Opção inválida. Tente novamente.");
+            break;
+
+    }
+
+    Console.ReadKey(); // Espera qualquer tecla para sair . 
+
+}
+
+
