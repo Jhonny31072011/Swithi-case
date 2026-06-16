@@ -1710,3 +1710,139 @@ while (opcao != 0)
 }
 
 
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       
+		//Atividade Prática: WHILE (16/06/2026)
+		
+		int numero = 1 ;
+		int soma = 0 ;
+	
+		while(numero >= 0 )
+		{
+			Console.WriteLine("Informe um número (Negativo para sair)");
+			numero = Convert.ToInt32(Console.ReadLine());
+			
+			if (numero > 0)
+				soma= soma+numero;
+		 }
+		Console.WriteLine($"A soma dos números positivos é {soma} ");
+	}
+}
+
+
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+    
+        Random aleatorio = new Random(); 
+        //Como inicia uma variável Randomica
+        int numeroSorteado = aleatorio.Next (1,100);
+        int palpite;
+        do
+        {
+         
+        Console.WriteLine("Tente adivnhar o numero escolhido aleatotiamente");
+        palpite = Convert.ToInt32(Console.ReadLine());
+        
+        if (palpite > numeroSorteado)
+            Console.Write("Errou!Tente novamente um número menor que esse.");
+                else
+                if (palpite < numeroSorteado)
+                     Console.WriteLine("Errou! Tente novamente um número maior.");
+                else
+                    Console.WriteLine("Parabéns, você acertou");
+        
+        }while(palpite != numeroSorteado);
+            
+    }
+         
+}
+
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int nota1;
+        int nota2;
+        int nota3;
+        int nota4;
+        int media;
+        
+        do{
+        
+        Console.WriteLine("Informe a sua nota do 1º Bimestre!");
+        nota1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Informe a sua nota do 2º Bimestre!");
+        nota2 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Informe a sua nota do 3º Bimestre!");
+        nota3 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Informe a sua nota do 4º Bimestre!");
+        nota4 = Convert.ToInt32(Console.ReadLine());
+        
+        }while(nota1 <= 0 && nota2 <= 0 && nota3 <= 0 && nota4 <= 0);
+        
+        media = (nota1+nota2+nota3+nota4) / 4;
+        Console.WriteLine($"A sua média foi {media}");
+        
+    
+        
+    }
+}
+
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int numero;
+        int contador;
+        do
+        {
+    contador = 1; //Contador sempre iicia com 1   
+    Console.WriteLine("Informe um número para a sau tabuada (Negativo para sair");
+    numero = Convert.ToInt32(Console.ReadLine());
+    
+    Console.WriteLine($" TABUADA DO NÚMERO {numero} ");
+		
+    while (contador <= 10)
+	{
+        Console.WriteLine($"{numero} X {contador} = {numero * contador}");
+        contador ++;
+	
+		
+	}while (numero > 0);
+	
+
+
+		
+			
+       
+		
+
+
+/*CORRIGIR O PRIMEIRO CÓDIGO ACIMA!!!*/
+
+
