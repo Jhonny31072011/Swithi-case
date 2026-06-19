@@ -772,3 +772,81 @@ class Program
         } while (opcao != 0);
     }
 }
+
+
+
+
+
+/*
+
+//Exercício 3 
+//Variáveis
+Console.WriteLine("Exibindo numeros pares com While");
+
+int contadorwhile = 2;
+while(contadorwhile <= 20)
+{
+    Console.WriteLine(contadorwhile);
+    contadorwhile +=2;
+}
+
+*/
+
+//Exercício 4 
+//Variáveis
+
+/*
+
+Console.WriteLine("Exibindo numeros ímapares com Do-While");
+int contador = 1;
+while (contador <= 20)
+{
+    Console.WriteLine(contador);
+    contador += 2;
+}
+
+*/
+
+//Exercício 5 
+//Variaveis
+
+/*
+
+int soma = 0;
+int contador = 1;
+
+while (contador <= 50)
+{
+    soma += contador;
+    contador++;
+}
+Console.WriteLine($"A soma dos numeros de 1 a 50 é {soma}");
+Console.ReadLine();
+
+*/
+
+//Exercício 5 
+//Variáveis
+
+Console.WriteLine("Digite um numero inteiro qualquer:");
+int numero = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine($"Tabuada do {numero}");
+
+int contador = 1;
+
+while(contador <=10)
+{
+    int resultado = numero * contador;
+    Console.WriteLine($"{numero} X {contador} = {resultado}");
+    contador ++;
+
+}
+
+
+
+
+
+
+
+//ARRUMAR OS EXERCICIOS ACIMA E OS OUTROS 67 DENTRO DO MENU!!!
