@@ -1,58 +1,90 @@
-using System;
+int opcao;
 
-class Program
+do
 {
-    static void Main(string[] args)
-    {
-        int opcao;
+    Console.Clear();
+    Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════╗");
+    Console.WriteLine("║           TODOS OS EXERCÍCIOS DE C# - MENU ÚNICO COM SWITCH-CASE           ║");
+    Console.WriteLine("╠════════════════════════════════════════════════════════════════════════════╣");
+    Console.WriteLine("║  1 - Calcular idade a partir do ano de nascimento                           ║");
+    Console.WriteLine("║  2 - Ler dois números e imprimir na ordem inversa                           ║");
+    Console.WriteLine("║  3 - Calcular Salário Líquido com percentual de desconto                    ║");
+    Console.WriteLine("║  4 - Converter Celsius para Fahrenheit                                      ║");
+    Console.WriteLine("║  5 - Calcular média de dois valores                                         ║");
+    Console.WriteLine("║  6 - Converter km/h para m/s                                                ║");
+    Console.WriteLine("║  7 - Salário com Previdência (10%) e Imposto (5%)                           ║");
+    Console.WriteLine("║  8 - Inverter número de 3 algarismos                                        ║");
+    Console.WriteLine("║  9 - Aumento de salário se <= R$ 150                                        ║");
+    Console.WriteLine("║ 10 - Aprovação por média (3 notas)                                          ║");
+    Console.WriteLine("║ 11 - Qual é o maior entre dois números                                      ║");
+    Console.WriteLine("║ 12 - Dia da semana (1 a 7)                                                  ║");
+    Console.WriteLine("║ 13 - Vogal ou Consoante (fallthrough)                                       ║");
+    Console.WriteLine("║ 14 - Lanchonete (código do produto)                                         ║");
+    Console.WriteLine("║ 15 - Calculadora Simples                                                    ║");
+    Console.WriteLine("║ 16 - Categoria por idade (Infantil/Juvenil/Sênior)                          ║");
+    Console.WriteLine("║ 17 - Imposto por Estado (SP, RJ, MG, ES)                                    ║");
+    Console.WriteLine("║ 18 - Peso em outros planetas                                                ║");
+    Console.WriteLine("║ 19 - Desafio RH TechCorp (bônus por cargo)                                  ║");
+    Console.WriteLine("║ 20 - Soma de números menores que 20 (até 0)                                 ║");
+    Console.WriteLine("║ 21 - Média de idades (até negativo)                                         ║");
+    Console.WriteLine("║ 22 - Validação de senha (1234)                                              ║");
+    Console.WriteLine("║ 23 - Encontrar o maior número (até negativo)                                ║");
+    Console.WriteLine("║ 24 - Menu interativo (Olá / Ano / Sair)                                     ║");
+    Console.WriteLine("║ 25 - Contagem Regressiva com Beep                                           ║");
+    Console.WriteLine("║ 26 - Somador de números (até 0)                                             ║");
+    Console.WriteLine("║ 27 - Validação de nota (0 a 10)                                             ║");
+    Console.WriteLine("║ 28 - Adivinhar número aleatório                                             ║");
+    Console.WriteLine("║ 29 - Tabuada com DO-WHILE                                                   ║");
+    Console.WriteLine("║ 30 - Exercício 1: 30 números > 100                                          ║");
+    Console.WriteLine("║ 31 - Exercício 2: 10 valores múltiplos de 3                                 ║");
+    Console.WriteLine("║ 32 - Exercício 3: Média até digitar 0                                       ║");
+    Console.WriteLine("║ 33 - Exercício 4: Média dos positivos até negativo                          ║");
+    Console.WriteLine("║ 34 - Exercício 5: Média + qtd pos/neg até 0                                 ║");
+    Console.WriteLine("║ 35 - Exercício 6: Somatório dos negativos até 0                             ║");
+    Console.WriteLine("║ 36 - Exercício 7: Funcionários salário >= 1000                              ║");
+    Console.WriteLine("║ 37 - Exercício 8: Média de alunos com status                                ║");
+    Console.WriteLine("║ 38 - Exercício 9: Novo preço produtos +15%                                  ║");
+    Console.WriteLine("║ 39 - Exercício 39: Média Ponderada com Matrícula                            ║");
+    Console.WriteLine("║ 40 - Exercício 40: Caixa Eletrônico                                         ║");
+    Console.WriteLine("║ 41 - Exercício 41: Celsius para Fahrenheit                                   ║");
+    Console.WriteLine("║ 42 - Exercício 42: Contador de Caracteres                                    ║");
+    Console.WriteLine("║ 43 - Exercício 43: Soma dos Dígitos                                         ║");
+    Console.WriteLine("║ 44 - Exercício 44: Número Perfeito                                          ║");
+    Console.WriteLine("║ 45 - Exercício 45: Inversor Numérico                                        ║");
+    Console.WriteLine("║ 46 - Exercício 46: Cronômetro Regressivo                                    ║");
+    Console.WriteLine("║ 47 - Exercício 47: Censo Demográfico                                         ║");
+    Console.WriteLine("║ 48 - Exercício 48: Cadastro Produto                                          ║");
+    Console.WriteLine("║ 49 - Exercício 49: Potenciação Manual                                        ║");
+    Console.WriteLine("║ 50 - Exercício 50: MDC                                                      ║");
+    Console.WriteLine("║ 51 - Exercício 51: Crescimento Populacional                                  ║");
+    Console.WriteLine("║ 52 - Exercício 52: Urna Eletrônica                                          ║");
+    Console.WriteLine("║ 53 - Exercício 53: Série Harmônica                                          ║");
+    Console.WriteLine("║ 54 - Exercício 54: Série Alternada                                          ║");
+    Console.WriteLine("║ 55 - Exercício 55: Fechamento de Caixa                                      ║");
+    Console.WriteLine("║ 56 - Exercício 56: Caça ao Alvo                                             ║");
+    Console.WriteLine("║ 57 - Exercício 57: Palíndromo                                               ║");
+    Console.WriteLine("║ 58 - Exercício 58: Estatísticas de Números                                  ║");
+    Console.WriteLine("║ 59 - Exercício 59: Investimento                                             ║");
+    Console.WriteLine("║ 60 - Exercício 60: Validador CPF                                           ║");
+    Console.WriteLine("║ 61 - Exercício 61: Controle de Estoque                                      ║");
+    Console.WriteLine("║ 62 - Exercício 62: Cifra de César                                           ║");
+    Console.WriteLine("║ 63 - Exercício 63: Tabuada Completa                                         ║");
+    Console.WriteLine("║ 64 - Exercício 64: Triângulo de Asteriscos                                  ║");
+    Console.WriteLine("║ 65 - Exercício 65: Estacionamento                                           ║");
+    Console.WriteLine("║ 66 - Exercício 66: Calculadora Científica                                   ║");
+    Console.WriteLine("║ 67 - Exercício 67: Corrida de Personagens                                   ║");
+    Console.WriteLine("║  0 - Sair                                                                  ║");
+    Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════╝");
+    Console.Write("\nDigite a opção desejada: ");
 
-        do
-        {
-            Console.Clear();
-            Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════╗");
-            Console.WriteLine("║           TODOS OS EXERCÍCIOS DE C# - MENU ÚNICO COM SWITCH-CASE           ║");
-            Console.WriteLine("╠════════════════════════════════════════════════════════════════════════════╣");
-            Console.WriteLine("║  1 - Calcular idade a partir do ano de nascimento                           ║");
-            Console.WriteLine("║  2 - Ler dois números e imprimir na ordem inversa                           ║");
-            Console.WriteLine("║  3 - Calcular Salário Líquido com percentual de desconto                    ║");
-            Console.WriteLine("║  4 - Converter Celsius para Fahrenheit                                      ║");
-            Console.WriteLine("║  5 - Calcular média de dois valores                                         ║");
-            Console.WriteLine("║  6 - Converter km/h para m/s                                                ║");
-            Console.WriteLine("║  7 - Salário com Previdência (10%) e Imposto (5%)                           ║");
-            Console.WriteLine("║  8 - Inverter número de 3 algarismos                                        ║");
-            Console.WriteLine("║  9 - Aumento de salário se <= R$ 150                                        ║");
-            Console.WriteLine("║ 10 - Aprovação por média (3 notas)                                          ║");
-            Console.WriteLine("║ 11 - Qual é o maior entre dois números                                      ║");
-            Console.WriteLine("║ 12 - Dia da semana (1 a 7)                                                  ║");
-            Console.WriteLine("║ 13 - Vogal ou Consoante (fallthrough)                                       ║");
-            Console.WriteLine("║ 14 - Lanchonete (código do produto)                                         ║");
-            Console.WriteLine("║ 15 - Calculadora Simples                                                    ║");
-            Console.WriteLine("║ 16 - Categoria por idade (Infantil/Juvenil/Sênior)                          ║");
-            Console.WriteLine("║ 17 - Imposto por Estado (SP, RJ, MG, ES)                                    ║");
-            Console.WriteLine("║ 18 - Peso em outros planetas                                                ║");
-            Console.WriteLine("║ 19 - Desafio RH TechCorp (bônus por cargo)                                  ║");
-            Console.WriteLine("║ 20 - Soma de números menores que 20 (até 0)                                 ║");
-            Console.WriteLine("║ 21 - Média de idades (até negativo)                                         ║");
-            Console.WriteLine("║ 22 - Validação de senha (1234)                                              ║");
-            Console.WriteLine("║ 23 - Encontrar o maior número (até negativo)                                ║");
-            Console.WriteLine("║ 24 - Menu interativo (Olá / Ano / Sair)                                     ║");
-            Console.WriteLine("║ 25 - Contagem Regressiva com Beep                                           ║");
-            Console.WriteLine("║ 26 - Somador de números (até 0)                                             ║");
-            Console.WriteLine("║ 27 - Validação de nota (0 a 10)                                             ║");
-            Console.WriteLine("║ 28 - Adivinhar número aleatório                                             ║");
-            Console.WriteLine("║ 29 - Tabuada com DO-WHILE                                                   ║");
-            Console.WriteLine("║ 30 - Exercício 1: 30 números > 100                                          ║");
-            Console.WriteLine("║ 31 - Exercício 2: 10 valores múltiplos de 3                                 ║");
-            Console.WriteLine("║ 32 - Exercício 3: Média até digitar 0                                       ║");
-            Console.WriteLine("║ 33 - Exercício 4: Média dos positivos até negativo                          ║");
-            Console.WriteLine("║ 34 - Exercício 5: Média + qtd pos/neg até 0                                 ║");
-            Console.WriteLine("║ 35 - Exercício 6: Somatório dos negativos até 0                             ║");
-            Console.WriteLine("║ 36 - Exercício 7: Funcionários salário >= 1000                              ║");
-            Console.WriteLine("║ 37 - Exercício 8: Média de alunos com status                                ║");
-            Console.WriteLine("║ 38 - Exercício 9: Novo preço produtos +15%                                  ║");
-            Console.WriteLine("║  0 - Sair                                                                  ║");
-            Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════╝");
-            Console.Write("\nDigite a opção desejada: ");
+    if (!int.TryParse(Console.ReadLine(), out opcao))
+        opcao = -1;
+
+    Console.Clear();
+
+    switch (opcao)
+    {
+         Console.Write("\nDigite a opção desejada: ");
 
             if (!int.TryParse(Console.ReadLine(), out opcao))
                 opcao = -1;
@@ -1580,15 +1612,9 @@ case 67:
         Console.WriteLine("Corredor B venceu!");
 
     break;
-
-                case 0:
-                    Console.WriteLine("Programa finalizado. Até mais!");
-                    break;
-
-
-
-
-
-
-
-
+    
+        case 0:
+            Console.WriteLine("Programa finalizado. Até mais!");
+            break;
+    }
+} while (opcao != 0);
