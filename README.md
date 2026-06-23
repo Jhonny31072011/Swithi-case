@@ -753,95 +753,838 @@ class Program
                     } while (cont38 == "S");
                     break;
 
+
+                    // ==================== CASO 39 ====================
+case 39:
+    // Exercício 39: Média Ponderada com Parada por Matrícula
+    Console.WriteLine(">>> Média Ponderada com Matrícula.\n");
+
+    int matricula39;
+
+    do
+    {
+        Console.Write("Matrícula (0 para sair): ");
+        matricula39 = Convert.ToInt32(Console.ReadLine());
+
+        if (matricula39 != 0)
+        {
+            Console.Write("Nota 1: ");
+            double nota1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Nota 2: ");
+            double nota2 = Convert.ToDouble(Console.ReadLine());
+
+            double media39 = ((nota1 * 2) + (nota2 * 3)) / 5;
+
+            Console.WriteLine($"Média: {media39:F2}");
+        }
+
+    } while (matricula39 != 0);
+
+    break;
+
+
+// ==================== CASO 40 ====================
+case 40:
+    // Exercício 40: Caixa Eletrônico
+    Console.WriteLine(">>> Caixa Eletrônico.\n");
+
+    Console.Write("Valor do saque: ");
+    int saque40 = Convert.ToInt32(Console.ReadLine());
+
+    int ced50 = 0, ced20 = 0, ced10 = 0;
+
+    while (saque40 >= 50)
+    {
+        ced50++;
+        saque40 -= 50;
+    }
+
+    while (saque40 >= 20)
+    {
+        ced20++;
+        saque40 -= 20;
+    }
+
+    while (saque40 >= 10)
+    {
+        ced10++;
+        saque40 -= 10;
+    }
+
+    Console.WriteLine($"Notas de 50: {ced50}");
+    Console.WriteLine($"Notas de 20: {ced20}");
+    Console.WriteLine($"Notas de 10: {ced10}");
+
+    break;
+
+
+// ==================== CASO 41 ====================
+case 41:
+    // Exercício 41: Celsius para Fahrenheit
+    Console.WriteLine(">>> Conversão Celsius para Fahrenheit.\n");
+
+    double celsius41;
+
+    do
+    {
+        Console.Write("Temperatura (-999 para sair): ");
+        celsius41 = Convert.ToDouble(Console.ReadLine());
+
+        if (celsius41 != -999)
+        {
+            double fahr = (celsius41 * 9 / 5) + 32;
+            Console.WriteLine($"Fahrenheit: {fahr:F2}");
+        }
+
+    } while (celsius41 != -999);
+
+    break;
+
+
+// ==================== CASO 42 ====================
+case 42:
+    // Exercício 42: Contador de Caracteres
+    Console.WriteLine(">>> Contador de Caracteres.\n");
+
+    string texto42;
+
+    do
+    {
+        Console.Write("Digite uma palavra (sair para encerrar): ");
+        texto42 = Console.ReadLine().ToLower();
+
+        if (texto42 != "sair")
+            Console.WriteLine($"Quantidade de caracteres: {texto42.Length}");
+
+    } while (texto42 != "sair");
+
+    break;
+
+
+// ==================== CASO 43 ====================
+case 43:
+    // Exercício 43: Soma dos Dígitos
+    Console.WriteLine(">>> Soma dos Dígitos.\n");
+
+    Console.Write("Digite um número: ");
+    int numero43 = Convert.ToInt32(Console.ReadLine());
+
+    int soma43 = 0;
+
+    while (numero43 > 0)
+    {
+        soma43 += numero43 % 10;
+        numero43 /= 10;
+    }
+
+    Console.WriteLine($"Soma dos dígitos: {soma43}");
+
+    break;
+
+
+// ==================== CASO 44 ====================
+case 44:
+    // Exercício 44: Número Perfeito
+    Console.WriteLine(">>> Número Perfeito.\n");
+
+    Console.Write("Digite um número: ");
+    int numero44 = Convert.ToInt32(Console.ReadLine());
+
+    int soma44 = 0;
+    int divisor44 = 1;
+
+    while (divisor44 < numero44)
+    {
+        if (numero44 % divisor44 == 0)
+            soma44 += divisor44;
+
+        divisor44++;
+    }
+
+    Console.WriteLine(soma44 == numero44
+        ? "Número perfeito."
+        : "Número não perfeito.");
+
+    break;
+
+
+// ==================== CASO 45 ====================
+case 45:
+    // Exercício 45: Inversor Numérico
+    Console.WriteLine(">>> Inversor Numérico.\n");
+
+    Console.Write("Digite um número: ");
+    int numero45 = Convert.ToInt32(Console.ReadLine());
+
+    int invertido45 = 0;
+
+    while (numero45 > 0)
+    {
+        invertido45 = invertido45 * 10 + (numero45 % 10);
+        numero45 /= 10;
+    }
+
+    Console.WriteLine($"Invertido: {invertido45}");
+
+    break;
+
+
+// ==================== CASO 46 ====================
+case 46:
+    // Exercício 46: Cronômetro Regressivo
+    Console.WriteLine(">>> Cronômetro Regressivo.\n");
+
+    Console.Write("Minutos: ");
+    int min46 = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Segundos: ");
+    int seg46 = Convert.ToInt32(Console.ReadLine());
+
+    while (min46 >= 0)
+    {
+        Console.WriteLine($"{min46:D2}:{seg46:D2}");
+
+        if (min46 == 0 && seg46 == 0)
+            break;
+
+        seg46--;
+
+        if (seg46 < 0)
+        {
+            seg46 = 59;
+            min46--;
+        }
+    }
+
+    break;
+
+
+// ==================== CASO 47 ====================
+case 47:
+    // Exercício 47: Censo Demográfico
+    Console.WriteLine(">>> Censo Demográfico.\n");
+
+    double salario47;
+    double somaSal47 = 0;
+    int somaFilhos47 = 0;
+    int qtd47 = 0;
+
+    do
+    {
+        Console.Write("Salário (negativo encerra): ");
+        salario47 = Convert.ToDouble(Console.ReadLine());
+
+        if (salario47 >= 0)
+        {
+            Console.Write("Filhos: ");
+            int filhos = Convert.ToInt32(Console.ReadLine());
+
+            somaSal47 += salario47;
+            somaFilhos47 += filhos;
+            qtd47++;
+        }
+
+    } while (salario47 >= 0);
+
+    if (qtd47 > 0)
+    {
+        Console.WriteLine($"Média salarial: {somaSal47 / qtd47:F2}");
+        Console.WriteLine($"Média filhos: {(double)somaFilhos47 / qtd47:F2}");
+    }
+
+    break;
+
+
+// ==================== CASO 48 ====================
+case 48:
+    // Exercício 48: Cadastro Produto
+    Console.WriteLine(">>> Cadastro Produto.\n");
+
+    string nome48;
+    double preco48;
+
+    do
+    {
+        Console.Write("Nome (mínimo 3 letras): ");
+        nome48 = Console.ReadLine();
+
+    } while (nome48.Length < 3);
+
+    do
+    {
+        Console.Write("Preço: ");
+        preco48 = Convert.ToDouble(Console.ReadLine());
+
+    } while (preco48 <= 0);
+
+    Console.WriteLine("Produto cadastrado.");
+
+    break;
+
+
+// ==================== CASO 49 ====================
+case 49:
+    // Exercício 49: Potenciação Manual
+    Console.WriteLine(">>> Potenciação Manual.\n");
+
+    Console.Write("Base: ");
+    int base49 = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Expoente: ");
+    int exp49 = Convert.ToInt32(Console.ReadLine());
+
+    int resultado49 = 1;
+    int cont49 = 1;
+
+    while (cont49 <= exp49)
+    {
+        resultado49 *= base49;
+        cont49++;
+    }
+
+    Console.WriteLine($"Resultado: {resultado49}");
+
+    break;
+
+
+// ==================== CASO 50 ====================
+case 50:
+    // Exercício 50: MDC
+    Console.WriteLine(">>> Máximo Divisor Comum.\n");
+
+    Console.Write("Número A: ");
+    int a50 = Convert.ToInt32(Console.ReadLine());
+
+    Console.Write("Número B: ");
+    int b50 = Convert.ToInt32(Console.ReadLine());
+
+    while (b50 != 0)
+    {
+        int resto = a50 % b50;
+        a50 = b50;
+        b50 = resto;
+    }
+
+    Console.WriteLine($"MDC = {a50}");
+
+    break;
+
+    // ==================== CASO 51 ====================
+case 51:
+    // Exercício 51: Crescimento Populacional
+    Console.WriteLine(">>> Crescimento Populacional.\n");
+
+    double paisA = 80000;
+    double paisB = 200000;
+    int anos51 = 0;
+
+    while (paisA < paisB)
+    {
+        paisA += paisA * 0.03;
+        paisB += paisB * 0.015;
+        anos51++;
+    }
+
+    Console.WriteLine($"Serão necessários {anos51} anos.");
+    break;
+
+
+// ==================== CASO 52 ====================
+case 52:
+    // Exercício 52: Urna Eletrônica
+    Console.WriteLine(">>> Urna Eletrônica.\n");
+
+    int voto52;
+    int cand1 = 0, cand2 = 0, cand3 = 0;
+    int nulos = 0, brancos = 0;
+    int total52 = 0;
+
+    do
+    {
+        Console.WriteLine("\n1-Candidato 1");
+        Console.WriteLine("2-Candidato 2");
+        Console.WriteLine("3-Candidato 3");
+        Console.WriteLine("4-Nulo");
+        Console.WriteLine("5-Branco");
+        Console.WriteLine("0-Encerrar");
+
+        Console.Write("Voto: ");
+        voto52 = Convert.ToInt32(Console.ReadLine());
+
+        switch (voto52)
+        {
+            case 1: cand1++; total52++; break;
+            case 2: cand2++; total52++; break;
+            case 3: cand3++; total52++; break;
+            case 4: nulos++; total52++; break;
+            case 5: brancos++; total52++; break;
+        }
+
+    } while (voto52 != 0);
+
+    Console.WriteLine($"\nCandidato 1: {cand1}");
+    Console.WriteLine($"Candidato 2: {cand2}");
+    Console.WriteLine($"Candidato 3: {cand3}");
+
+    if (total52 > 0)
+    {
+        Console.WriteLine($"Nulos: {(double)nulos / total52 * 100:F2}%");
+        Console.WriteLine($"Brancos: {(double)brancos / total52 * 100:F2}%");
+    }
+
+    break;
+
+
+// ==================== CASO 53 ====================
+case 53:
+    // Exercício 53: Série Harmônica
+    Console.WriteLine(">>> Série Harmônica.\n");
+
+    Console.Write("Digite N: ");
+    int n53 = Convert.ToInt32(Console.ReadLine());
+
+    double soma53 = 0;
+    int cont53 = 1;
+
+    while (cont53 <= n53)
+    {
+        soma53 += 1.0 / cont53;
+        cont53++;
+    }
+
+    Console.WriteLine($"Resultado: {soma53:F4}");
+    break;
+
+
+// ==================== CASO 54 ====================
+case 54:
+    // Exercício 54: Série Alternada
+    Console.WriteLine(">>> Série Alternada.\n");
+
+    Console.Write("Digite N: ");
+    int n54 = Convert.ToInt32(Console.ReadLine());
+
+    double soma54 = 0;
+    int numerador54 = 1;
+    int denominador54 = 1;
+    int sinal54 = 1;
+
+    while (numerador54 <= n54)
+    {
+        soma54 += sinal54 * ((double)numerador54 / denominador54);
+
+        numerador54++;
+        denominador54 += 2;
+        sinal54 *= -1;
+    }
+
+    Console.WriteLine($"Resultado: {soma54:F4}");
+    break;
+
+
+// ==================== CASO 55 ====================
+case 55:
+    // Exercício 55: Fechamento de Caixa
+    Console.WriteLine(">>> Fechamento de Caixa.\n");
+
+    double total55 = 0;
+
+    while (true)
+    {
+        Console.Write("Preço do produto: ");
+        double preco55 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Quantidade (0 encerra): ");
+        int qtd55 = Convert.ToInt32(Console.ReadLine());
+
+        if (qtd55 == 0)
+            break;
+
+        total55 += preco55 * qtd55;
+    }
+
+    if (total55 > 500)
+        total55 *= 0.90;
+
+    Console.WriteLine($"Total a pagar: R$ {total55:F2}");
+    break;
+
+
+// ==================== CASO 56 ====================
+case 56:
+    // Exercício 56: Caça ao Alvo
+    Console.WriteLine(">>> Caça ao Alvo.\n");
+
+    int alvoX = 7;
+    int alvoY = 12;
+
+    int x56, y56;
+
+    do
+    {
+        Console.Write("X: ");
+        x56 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Y: ");
+        y56 = Convert.ToInt32(Console.ReadLine());
+
+        if (x56 < alvoX) Console.WriteLine("Mais a Leste");
+        if (x56 > alvoX) Console.WriteLine("Mais a Oeste");
+
+        if (y56 < alvoY) Console.WriteLine("Mais ao Norte");
+        if (y56 > alvoY) Console.WriteLine("Mais ao Sul");
+
+    } while (x56 != alvoX || y56 != alvoY);
+
+    Console.WriteLine("Alvo encontrado!");
+    break;
+
+
+// ==================== CASO 57 ====================
+case 57:
+    // Exercício 57: Palíndromo
+    Console.WriteLine(">>> Verificar Palíndromo.\n");
+
+    Console.Write("Digite uma palavra: ");
+    string palavra57 = Console.ReadLine().ToLower();
+
+    bool palindromo57 = true;
+
+    int inicio57 = 0;
+    int fim57 = palavra57.Length - 1;
+
+    while (inicio57 < fim57)
+    {
+        if (palavra57[inicio57] != palavra57[fim57])
+        {
+            palindromo57 = false;
+            break;
+        }
+
+        inicio57++;
+        fim57--;
+    }
+
+    Console.WriteLine(palindromo57 ? "É palíndromo." : "Não é palíndromo.");
+    break;
+
+
+// ==================== CASO 58 ====================
+case 58:
+    // Exercício 58: Estatísticas
+    Console.WriteLine(">>> Estatísticas de Números.\n");
+
+    int numero58;
+    int total58 = 0;
+    int impares58 = 0;
+
+    double somaPares58 = 0;
+    int qtdPares58 = 0;
+
+    do
+    {
+        Console.Write("Número (0 encerra): ");
+        numero58 = Convert.ToInt32(Console.ReadLine());
+
+        if (numero58 != 0)
+        {
+            total58++;
+
+            if (numero58 % 2 == 0)
+            {
+                somaPares58 += numero58;
+                qtdPares58++;
+            }
+            else
+            {
+                impares58++;
+            }
+        }
+
+    } while (numero58 != 0);
+
+    if (qtdPares58 > 0)
+        Console.WriteLine($"Média dos pares: {somaPares58 / qtdPares58:F2}");
+
+    if (total58 > 0)
+        Console.WriteLine($"% Ímpares: {(double)impares58 / total58 * 100:F2}%");
+
+    break;
+
+
+// ==================== CASO 59 ====================
+case 59:
+    // Exercício 59: Investimento
+    Console.WriteLine(">>> Simulador de Investimento.\n");
+
+    Console.Write("Capital inicial: ");
+    double capital59 = Convert.ToDouble(Console.ReadLine());
+
+    Console.Write("Taxa (%): ");
+    double taxa59 = Convert.ToDouble(Console.ReadLine());
+
+    Console.Write("Meses: ");
+    int meses59 = Convert.ToInt32(Console.ReadLine());
+
+    int mes59 = 1;
+
+    while (mes59 <= meses59)
+    {
+        capital59 += capital59 * (taxa59 / 100);
+
+        Console.WriteLine($"Mês {mes59}: R$ {capital59:F2}");
+
+        mes59++;
+    }
+
+    break;
+
+
+// ==================== CASO 60 ====================
+case 60:
+    // Exercício 60: Validador CPF
+    Console.WriteLine(">>> Validador de CPF.\n");
+
+    string cpf60;
+
+    do
+    {
+        Console.Write("CPF: ");
+        cpf60 = Console.ReadLine();
+
+        cpf60 = cpf60.Replace(".", "");
+        cpf60 = cpf60.Replace("-", "");
+
+    } while (cpf60.Length != 11);
+
+    Console.WriteLine("CPF válido.");
+    break;
+
+
+// ==================== CASO 61 ====================
+case 61:
+    // Exercício 61: Controle de Estoque
+    Console.WriteLine(">>> Controle de Estoque.\n");
+
+    Console.Write("Quantidade inicial: ");
+    int estoque61 = Convert.ToInt32(Console.ReadLine());
+
+    int inicial61 = estoque61;
+    int retirada61;
+
+    do
+    {
+        Console.Write("Retirada (-1 encerra): ");
+        retirada61 = Convert.ToInt32(Console.ReadLine());
+
+        if (retirada61 > 0)
+            estoque61 -= retirada61;
+
+        Console.WriteLine($"Estoque: {estoque61}");
+
+        if (estoque61 <= inicial61 * 0.15)
+            Console.WriteLine("ALERTA: Estoque crítico!");
+
+    } while (retirada61 != -1 && estoque61 > 0);
+
+    break;
+
+
+// ==================== CASO 62 ====================
+case 62:
+    // Exercício 62: Cifra de César
+    Console.WriteLine(">>> Cifra de César.\n");
+
+    Console.Write("Texto: ");
+    string texto62 = Console.ReadLine();
+
+    Console.Write("Deslocamento: ");
+    int desloc62 = Convert.ToInt32(Console.ReadLine());
+
+    string resultado62 = "";
+
+    int i62 = 0;
+
+    while (i62 < texto62.Length)
+    {
+        resultado62 += (char)(texto62[i62] + desloc62);
+        i62++;
+    }
+
+    Console.WriteLine($"Texto cifrado: {resultado62}");
+    break;
+
+
+// ==================== CASO 63 ====================
+case 63:
+    // Exercício 63: Tabuada Completa
+    Console.WriteLine(">>> Tabuada Completa.\n");
+
+    int tab63 = 1;
+
+    while (tab63 <= 10)
+    {
+        Console.WriteLine($"\nTABUADA DO {tab63}");
+
+        int mult63 = 1;
+
+        while (mult63 <= 10)
+        {
+            Console.WriteLine($"{tab63} x {mult63} = {tab63 * mult63}");
+            mult63++;
+        }
+
+        tab63++;
+    }
+
+    break;
+
+
+// ==================== CASO 64 ====================
+case 64:
+    // Exercício 64: Triângulo
+    Console.WriteLine(">>> Triângulo de Asteriscos.\n");
+
+    Console.Write("Altura: ");
+    int altura64 = Convert.ToInt32(Console.ReadLine());
+
+    int linha64 = 1;
+
+    while (linha64 <= altura64)
+    {
+        int coluna64 = 1;
+
+        while (coluna64 <= linha64)
+        {
+            Console.Write("*");
+            coluna64++;
+        }
+
+        Console.WriteLine();
+
+        linha64++;
+    }
+
+    break;
+
+
+// ==================== CASO 65 ====================
+case 65:
+    // Exercício 65: Estacionamento
+    Console.WriteLine(">>> Estacionamento.\n");
+
+    while (true)
+    {
+        Console.Write("Entrada (-1 encerra): ");
+        int entrada65 = Convert.ToInt32(Console.ReadLine());
+
+        if (entrada65 == -1)
+            break;
+
+        Console.Write("Saída: ");
+        int saida65 = Convert.ToInt32(Console.ReadLine());
+
+        int tempo65 = saida65 - entrada65;
+
+        int horas65 = (int)Math.Ceiling(tempo65 / 60.0);
+
+        Console.WriteLine($"Valor: R$ {horas65 * 5:F2}");
+    }
+
+    break;
+
+
+// ==================== CASO 66 ====================
+case 66:
+    // Exercício 66: Calculadora Científica
+    Console.WriteLine(">>> Calculadora Científica.\n");
+
+    int op66;
+
+    do
+    {
+        Console.WriteLine("\n1-Soma");
+        Console.WriteLine("2-Subtração");
+        Console.WriteLine("3-Multiplicação");
+        Console.WriteLine("4-Divisão");
+        Console.WriteLine("5-Potência");
+        Console.WriteLine("6-Fatorial");
+        Console.WriteLine("0-Sair");
+
+        Console.Write("Opção: ");
+        op66 = Convert.ToInt32(Console.ReadLine());
+
+        if (op66 >= 1 && op66 <= 5)
+        {
+            Console.Write("A: ");
+            double a66 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("B: ");
+            double b66 = Convert.ToDouble(Console.ReadLine());
+
+            switch (op66)
+            {
+                case 1: Console.WriteLine(a66 + b66); break;
+                case 2: Console.WriteLine(a66 - b66); break;
+                case 3: Console.WriteLine(a66 * b66); break;
+                case 4: Console.WriteLine(a66 / b66); break;
+                case 5: Console.WriteLine(Math.Pow(a66, b66)); break;
+            }
+        }
+
+        if (op66 == 6)
+        {
+            Console.Write("Número: ");
+            int n66 = Convert.ToInt32(Console.ReadLine());
+
+            long fat66 = 1;
+
+            while (n66 > 1)
+            {
+                fat66 *= n66;
+                n66--;
+            }
+
+            Console.WriteLine($"Fatorial: {fat66}");
+        }
+
+    } while (op66 != 0);
+
+    break;
+
+
+// ==================== CASO 67 ====================
+case 67:
+    // Exercício 67: Corrida de Personagens
+    Console.WriteLine(">>> Corrida de Personagens.\n");
+
+    int corredorA = 0;
+    int corredorB = 0;
+
+    Random rnd67 = new Random();
+
+    while (corredorA < 100 && corredorB < 100)
+    {
+        corredorA += rnd67.Next(1, 11);
+        corredorB += rnd67.Next(1, 11);
+
+        Console.WriteLine($"A = {corredorA}m | B = {corredorB}m");
+    }
+
+    if (corredorA >= 100 && corredorB >= 100)
+        Console.WriteLine("Empate!");
+    else if (corredorA >= 100)
+        Console.WriteLine("Corredor A venceu!");
+    else
+        Console.WriteLine("Corredor B venceu!");
+
+    break;
+
                 case 0:
                     Console.WriteLine("Programa finalizado. Até mais!");
                     break;
 
-                default:
-                    Console.WriteLine("Opção inválida! Tente novamente.");
-                    break;
-            }
-
-            if (opcao != 0)
-            {
-                Console.WriteLine("\n────────────────────────────────────────────────────────────");
-                Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
-                Console.ReadKey();
-            }
-
-        } while (opcao != 0);
-    }
-}
-
-
-
-
-
-/*
-
-//Exercício 3 
-//Variáveis
-Console.WriteLine("Exibindo numeros pares com While");
-
-int contadorwhile = 2;
-while(contadorwhile <= 20)
-{
-    Console.WriteLine(contadorwhile);
-    contadorwhile +=2;
-}
-
-*/
-
-//Exercício 4 
-//Variáveis
-
-/*
-
-Console.WriteLine("Exibindo numeros ímapares com Do-While");
-int contador = 1;
-while (contador <= 20)
-{
-    Console.WriteLine(contador);
-    contador += 2;
-}
-
-*/
-
-//Exercício 5 
-//Variaveis
-
-/*
-
-int soma = 0;
-int contador = 1;
-
-while (contador <= 50)
-{
-    soma += contador;
-    contador++;
-}
-Console.WriteLine($"A soma dos numeros de 1 a 50 é {soma}");
-Console.ReadLine();
-
-*/
-
-//Exercício 5 
-//Variáveis
-
-Console.WriteLine("Digite um numero inteiro qualquer:");
-int numero = Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine($"Tabuada do {numero}");
-
-int contador = 1;
-
-while(contador <=10)
-{
-    int resultado = numero * contador;
-    Console.WriteLine($"{numero} X {contador} = {resultado}");
-    contador ++;
-
-}
 
 
 
@@ -849,4 +1592,3 @@ while(contador <=10)
 
 
 
-//ARRUMAR OS EXERCICIOS ACIMA E OS OUTROS 67 DENTRO DO MENU!!!
